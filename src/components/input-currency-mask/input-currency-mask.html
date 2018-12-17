@@ -1,0 +1,17 @@
+<div>
+  <ion-item>
+    <ion-label for="ionInput" floating>{{label}}</ion-label>
+    <ion-input
+    id="ionInput"
+    type="text"
+    [disabled]="disabled ? '' : null"
+    (keyup)="keyUpEvent($event)"
+    (ionChange)="onChange($event,1)"
+    [(ngModel)]="valueIonInput">
+  </ion-input>
+  <ion-icon icon-only *ngIf="hiddenPropConf == false" name="ios-checkmark-circle-outline" color="success" item-end></ion-icon>
+      <button ion-button icon-only clear item-end *ngIf="hiddenPropConf == true" (click)="messageError(2)">
+          <ion-icon name="ios-alert-outline" color="danger"></ion-icon>
+      </button>
+</ion-item>
+</div>

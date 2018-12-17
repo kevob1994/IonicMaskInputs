@@ -1,0 +1,46 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Ionic Blank
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <form [formGroup]="formOne">
+
+    <!-- <ion-currency-mask
+      [(ngModel)]="valueIonInput"
+      label="Monto"
+      formControlName="monto"
+      (currencyShow)="showMonto($event)"
+      usd="true"
+      ngDefaultControl>
+    </ion-currency-mask> -->
+
+    <input-currency-mask
+      [(ngModel)]="valueIonInput"
+      label="Monto"
+      formControlName="monto"
+      ngDefaultControl
+      (currencyShow)="showMonto($event)"
+    >
+
+    </input-currency-mask>
+
+    <ion-item>
+      <!-- <ion-label floating>Número de identificación</ion-label>
+      <ion-input type="text" mask="9999-9999-9999-9999" [(ngModel)]="noCard" required (ngModelChange)="validate('noCard',$event)" formControlName="noCard"></ion-input>
+      <ion-icon icon-only *ngIf="hiddenProp == false" name="ios-checkmark-circle-outline" color="success" item-end hide></ion-icon>
+    <button ion-button icon-only clear item-end *ngIf="hiddenProp == true">
+      <ion-icon name="ios-alert-outline" color="danger"></ion-icon>
+    </button> -->
+    </ion-item>
+    </form>
+    <button ion-button block (click)="probar()">enter</button>
+    <p>
+      {{
+        currency | json
+      }}
+    </p>
+</ion-content>
